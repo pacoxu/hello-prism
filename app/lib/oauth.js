@@ -16,10 +16,6 @@ function register() {
         refreshToken: refreshToken,
         profile: profile
       });
-      //We should store the user in some lib here
-      console.log("accessToken:", accessToken);
-      console.log("refreshToken:", refreshToken);
-      console.log("profile:", profile);
       done(null, null);
     }
   ));

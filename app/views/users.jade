@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  a(href='/') Home
+
+  p Welcome #{user_data.status.name}
+
+  table
+    thead
+      tr
+        th Action
+        th Kind
+    tbody
+      - var items = user_data.status.roles_list[0].resources.permission_list
+      - each item in items
+        tr
+          td= item.target_action
+          td= item.target_kind

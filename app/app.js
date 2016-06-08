@@ -9,8 +9,8 @@ var passport = require('passport');
 var oauth = require('./lib/oauth');
 var tokenStore = require('./lib/token_store')
 var routes = require('./routes/index');
-var users = require('./routes/users');
-
+var vms = require('./routes/vms');
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 var app = express();
 
 // Register oauth strategy
@@ -31,14 +31,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/auth/provider', passport.authenticate('provider'));
+app.get('/auth/provider', passport.authenticate('provider', { scope: 'all' }));
 app.get('/auth/provider/callback',
   passport.authenticate('provider', { successRedirect: '/',
-                                      failureRedirect: '/login' }));
+                                      failureRedirect: '/vms' }));
 
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/vms', vms);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

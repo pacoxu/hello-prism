@@ -5,10 +5,18 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var oauth = require('./lib/oauth');
+var tokenStore = require('./lib/token_store')
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+// Register oauth strategy
+oauth.register();
+
+// Initialize token store
+tokenStore.getInstance();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +29,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/auth/provider', passport.authenticate('provider'));
+app.get('/auth/provider/callback',
+  passport.authenticate('provider', { successRedirect: '/',
+                                      failureRedirect: '/login' }));
+
 
 app.use('/', routes);
 app.use('/users', users);

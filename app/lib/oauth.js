@@ -1,14 +1,16 @@
 var passport = require('passport')
   , OAuth2Strategy = require('passport-oauth').OAuth2Strategy
-  , tokenStore = require('./lib/token_store');
+  , tokenStore = require('./token_store');
 
 function register() {
   passport.use('provider', new OAuth2Strategy({
-      authorizationURL: 'https://www.provider.com/oauth2/authorize',
-      tokenURL: 'https://www.provider.com/oauth2/token',
-      clientID: '123-456-789',
-      clientSecret: 'shhh-its-a-secret'
-      callbackURL: 'https://www.example.com/auth/provider/callback'
+      authorizationURL: 'https://10.4.31.229:9440/console/#page/' +
+        'authorize/?authorize=true&client_id=test_client_ui&scope=all&' +
+        'state=some_state&redirect_uri=http%3A%2F%2Fwww.nutanix.com&response_type=code',
+      tokenURL: 'https://10.4.31.229:9440/api/nutanix/v3/oauth/token',
+      clientID: 'test_client_ui',
+      clientSecret: 'test_client_secret',
+      callbackURL: 'http://localhost:5000/auth/provider/callback'
     },
     function(accessToken, refreshToken, profile, done) {
       tokenStore.getInstance().storeToken({

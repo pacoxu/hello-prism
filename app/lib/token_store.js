@@ -5,11 +5,11 @@ var TokenStore = function() {
 	this.token = null;
 };
 
-TokenStore.prototype.storeToken(token) {
+TokenStore.prototype.storeToken = function(token) {
 	this.token=token;
 };
 
-TokenStore.prototype.getToken() {
+TokenStore.prototype.getToken = function() {
 	return this.token;
 };
 

@@ -1,9 +1,9 @@
 # hello-prism
 
-## Build docker image
+### Build docker image
 
-### docker build -t codervinod/hello-prism .
+> docker build -t codervinod/hello-prism .
 
-## Run docker image
+### Run docker image
 
-### docker run -p 3000:3000 -d codervinod/hello-prism
+> docker run -p 3000:3000 -d codervinod/hello-prism

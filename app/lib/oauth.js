@@ -11,12 +11,13 @@ function register() {
       callbackURL: 'http://localhost:3000/auth/provider/callback'
     },
     function(accessToken, refreshToken, profile, done) {
-      tokenStore.getInstance().storeToken({
+      token = {
         accessToken: accessToken,
         refreshToken: refreshToken,
         profile: profile
-      });
-      done(null, null);
+      };
+      tokenStore.getInstance().storeToken(token);
+      done(null, accessToken);
     }
   ));
 };

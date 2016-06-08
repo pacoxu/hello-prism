@@ -13,6 +13,10 @@ var users = require('./routes/users');
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 var app = express();
 
+//Init passport
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Register oauth strategy
 oauth.register();
 
@@ -33,8 +37,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/auth/provider', passport.authenticate('provider', { scope: 'all' }));
 app.get('/auth/provider/callback',
-  passport.authenticate('provider', { successRedirect: '/',
-                                      failureRedirect: '/users' }));
+  passport.authenticate('provider', { successRedirect: '/users',
+                                      failureRedirect: '/' }));
 
 
 app.use('/', routes);
@@ -69,6 +73,14 @@ app.use(function(err, req, res, next) {
     message: err.message,
     error: {}
   });
+});
+
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
 });
 
 

@@ -10,7 +10,10 @@ var oauth = require('./lib/oauth');
 var tokenStore = require('./lib/token_store')
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+//To allow self signed certificates
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 var app = express();
 
 //Init passport

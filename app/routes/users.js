@@ -14,9 +14,13 @@ router.get('/', function(req, res, next) {
 		.auth(null, null, true, token.accessToken)
 		.on('data', function(data) {
 	    var user_data=JSON.parse(data);
-	    console.log(user_data);
 	    res.render('users', { title: "User Permissions", user_data: user_data });
-	  });
+	  
+	  })
+		.on('error', function(err){
+			console.err('Error in fetching data:', err);
+			res.redirect('/');
+		});
 });
 
 module.exports = router;

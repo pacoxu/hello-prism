@@ -24,7 +24,7 @@ app.use(passport.session());
 oauth.register();
 
 // Initialize token store
-tokenStore.getInstance();
+token_store = tokenStore.getInstance();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,7 +45,15 @@ app.get('/auth/provider/callback',
 
 
 app.use('/', routes);
-app.use('/users', users);
+
+var auth_route = function(req, res, next) { 
+  if (token_store.getToken() == null) 
+    res.redirect('/auth/provider'); 
+  else 
+    next(); 
+}
+
+app.use('/users', auth_route, users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

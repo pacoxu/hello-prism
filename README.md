@@ -3,6 +3,9 @@ This is a sample app which can be used to get start with developing applications
 
 License: MIT
 
+### Pull docker image
+docker pull codervinod/hello-prism
+
 ### Build docker image
 
 > docker build -t codervinod/hello-prism .

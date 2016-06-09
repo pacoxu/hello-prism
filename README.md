@@ -9,8 +9,8 @@ License: MIT
 
 ### Run docker image
 
-> docker run -d 
-	-e CLUSTER_IP='10.4.31.229' 
+> docker run -d \
+	-e CLUSTER_IP='10.4.31.229' \
 	-e CLIENT_ID='test_client_app' \
 	-e CLIENT_SECRET='test_client_secret' \
 	-e CONTAINTER_VM_IP='localhost' \

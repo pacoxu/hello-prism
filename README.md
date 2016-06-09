@@ -7,14 +7,7 @@ License: MIT
 > docker pull codervinod/hello-prism
 
 ### Run docker image
-> docker run -d \
-	-e CLUSTER_IP='x.x.x.x' \
-	-e CLIENT_ID='test_client_app' \
-	-e CLIENT_SECRET='test_client_secret' \
-	-e CONTAINTER_VM_IP='localhost' \
-	-e PORT='3000' \
-	-p 3000:3000 \
-	codervinod/hello-prism
+> docker run -d -e CLUSTER_IP='x.x.x.x' -e CLIENT_ID='test_client_app' -e CLIENT_SECRET='test_client_secret' -e CONTAINTER_VM_IP='x.x.x.x' -e PORT='3000' -p 3000:3000 codervinod/hello-prism
 
 ### Build docker image
 > docker build -t codervinod/hello-prism .

@@ -4,16 +4,11 @@ This is a sample app which can be used to get start with developing applications
 License: MIT
 
 ### Pull docker image
-docker pull codervinod/hello-prism
-
-### Build docker image
-
-> docker build -t codervinod/hello-prism .
+> docker pull codervinod/hello-prism
 
 ### Run docker image
-
 > docker run -d \
-	-e CLUSTER_IP='10.4.31.229' \
+	-e CLUSTER_IP='x.x.x.x' \
 	-e CLIENT_ID='test_client_app' \
 	-e CLIENT_SECRET='test_client_secret' \
 	-e CONTAINTER_VM_IP='localhost' \
@@ -21,8 +16,10 @@ docker pull codervinod/hello-prism
 	-p 3000:3000 \
 	codervinod/hello-prism
 
-#### Environment variables:
+### Build docker image
+> docker build -t codervinod/hello-prism .
 
+#### Environment variables:
 	CLUSTER_IP : Nutanix cluster ip address
 	CLIENT_ID : Client_id for Oauth2.0 generated for the container instance of app
 	CLIENT_SECRET: Client_secret for Oauth2.0 generated for the container instance of app

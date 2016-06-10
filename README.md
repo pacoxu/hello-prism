@@ -7,8 +7,6 @@ It uses node.js express framework. The App currently shows following:
 - Use Nutanix bootstrap for getting look and feel of Prism.
 
 
-It also shows integration of Oauth2.0 protocol with Nutanix platform and Nutanix bootstrap version to get look and feel of Prism.
-
 License: MIT
 
 ### Build docker image

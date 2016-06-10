@@ -1,7 +1,13 @@
 # hello-prism
 This is a sample app which can be used to get start with developing applications for Nutanix Platform.
 
-It uses node.js express framework. It also shows integration of Oauth2.0 protocol with Nutanix platform and Nutanix bootstrap version to get look and feel of Prism.
+It uses node.js express framework. The App currently shows following:
+- Authenticating to Nutanix platform using Oauth2.0
+- Access REST API using Oauth2.0 tokens
+- Use Nutanix bootstrap for getting look and feel of Prism.
+
+
+It also shows integration of Oauth2.0 protocol with Nutanix platform and Nutanix bootstrap version to get look and feel of Prism.
 
 License: MIT
 
@@ -19,5 +25,5 @@ License: MIT
 	CONTAINTER_VM_IP: IP address on which the containter instance is running
 	PORT: Port at which app server needs to be hosted
 
-### Pull docker image (sample pre-build image from docker hub)
+##### Pull docker image (sample pre-build image from docker hub)
 > docker pull codervinod/hello-prism

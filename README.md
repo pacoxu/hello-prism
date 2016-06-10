@@ -10,10 +10,10 @@ It uses node.js express framework. The App currently shows following:
 License: MIT
 
 ### Build docker image
-> docker build -t <image_tag> .
+> docker build -t image_tag .
 
 ### Run docker image
-> docker run -d -e CLUSTER_IP='x.x.x.x' -e CLIENT_ID='test_client_app' -e CLIENT_SECRET='test_client_secret' -e CONTAINTER_VM_IP='x.x.x.x' -e PORT='3000' -p 3000:3000 <image_tag>
+> docker run -d -e CLUSTER_IP='x.x.x.x' -e CLIENT_ID='test_client_app' -e CLIENT_SECRET='test_client_secret' -e CONTAINTER_VM_IP='x.x.x.x' -e PORT='3000' -p 3000:3000 image_tag
 
 
 #### Environment variables:

@@ -23,10 +23,12 @@ License: MIT
 	CONTAINTER_VM_IP: IP address on which the containter instance is running
 	PORT: Port at which app server needs to be hosted
 
-##### Pull docker image (sample pre-build image from docker hub)
+#### Pull docker image (sample pre-build image from docker hub)
 > docker pull codervinod/hello-prism
 
-##### To generate the client id and client secret, you will need access to a Nutanix cluster. On the Nutanix cluster, navigate to the following URL: https://<cvm-ip>:9440/console/#execute?action=create&actionTarget=oauth_client
+#### Generate Oauth credentials 
+> https://<cvm-ip>:9440/console/#execute?action=create&actionTarget=oauth_client
 
-###Follow the instructions as shown in the video to boot up this app. https://youtu.be/QrlsUsm1NM4
+#### Follow the instructions as shown in the video to boot up this app. 
+> https://youtu.be/QrlsUsm1NM4
 

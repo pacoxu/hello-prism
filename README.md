@@ -27,7 +27,7 @@ License: MIT
 > docker pull codervinod/hello-prism
 
 #### Generate Oauth credentials 
-> https://<cvm-ip>:9440/console/#execute?action=create&actionTarget=oauth_client
+> https://cluster_ip:9440/console/#execute?action=create&actionTarget=oauth_client
 
 #### Follow the instructions as shown in the video to boot up this app. 
 > https://youtu.be/QrlsUsm1NM4

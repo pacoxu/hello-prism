@@ -1,16 +1,21 @@
 {
-	"name": "Hello Prism 6",
-	"version": "0.0.2",
-	"description": "This is Hello Prism Extension",
+	"name": "DemoExtension Today 2",
+	"version": "0.0.1",
+	"description": "This is demo3 extension",
 	"company": "Nutanix, Inc.",
 	"docker_auth_type" : "docker",
 	"docker_auth_data" : {
     	"https://index.docker.io/v1/": {
-	            "username": "nutanixapps",
-				"password": "nutanix/4u",
+	            "username": "xtensions",
+				"password": "nutanix@123",
 	            "email": "vinod.gupta@nutanix.com"  
 	        }
 	},
-	"docker_repository":"hello-prism",
-	"docker_tag":"latest"
+	"container_image_name":"hello-world-demo",
+	"container_image_tag":"2",
+	"container_spec": {
+		"port_mapping_reference_list": {
+          "3000":"3000"
+        }
+	}
 }

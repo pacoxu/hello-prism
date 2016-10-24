@@ -1,7 +1,7 @@
 {
-	"name": "DemoExtension Today 2",
+	"name": "Hello Prism",
 	"version": "0.0.1",
-	"description": "This is demo3 extension",
+	"description": "This is hello prism extension",
 	"company": "Nutanix, Inc.",
 	"docker_auth_type" : "docker",
 	"docker_auth_data" : {
@@ -12,10 +12,12 @@
 	        }
 	},
 	"container_image_name":"hello-world-demo",
-	"container_image_tag":"2",
+	"container_image_tag":"5",
 	"container_spec": {
 		"port_mapping_reference_list": {
           "3000":"3000"
-        }
+        },
+	"volume_file_system_type": "ext4",
+	"volume_size_mb":512
 	}
 }
